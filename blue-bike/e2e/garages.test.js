@@ -1,4 +1,4 @@
-describe('BikesScreen', () => {
+describe('GaragesScreen', () => {
     beforeAll(async () => {
       await device.launchApp();
     });
@@ -7,7 +7,7 @@ describe('BikesScreen', () => {
       await device.reloadReactNative();
     });
   
-    it('should show a spinner while loading and then render bikes or "No bikes available"', async () => {
+    it('should show a spinner while loading and then render garages or "No garages available"', async () => {
       await element(by.text('Garages')).tap();
   
       await expect(element(by.type('Spinner'))).toBeVisible();
@@ -16,14 +16,14 @@ describe('BikesScreen', () => {
         .toBeNotVisible()
         .withTimeout(5000);
   
-      const bikeCard = element(by.text('Gent-Dampoort-Station'));
-      const noBikesText = element(by.text('No bikes available'));
+      const garageCard = element(by.text('Getouw'));
+      const noGaragesText = element(by.text('No garages available'));
   
-      await waitFor(bikeCard)
+      await waitFor(garageCard)
         .toBeVisible()
         .withTimeout(2000)
         .catch(async () => {
-          await expect(noBikesText).toBeVisible();
+          await expect(noGaragesText).toBeVisible();
         });
     });
   });
