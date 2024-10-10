@@ -10,3 +10,4 @@ Blue Bike is a React Native mobile application designed to help users find and m
 - **Zustand**: A fast and lightweight state management solution.
 - **NativeBase**: UI component library for a consistent and beautiful design.
 - **Axios**: Promise-based HTTP client for making API requests.
+- **Detox**: Detox is an end-to-end testing framework specifically designed for React Native applications.
