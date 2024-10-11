@@ -8,6 +8,8 @@ describe('BikesScreen', () => {
   });
 
   it('should show a spinner while loading and then render bikes or "No bikes available"', async () => {
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    
     await element(by.text('Bikes')).tap();
 
     await expect(element(by.type('Spinner'))).toBeVisible();
@@ -16,7 +18,7 @@ describe('BikesScreen', () => {
       .toBeNotVisible()
       .withTimeout(5000);
 
-    const bikeCard = element(by.text('Gent-Dampoor-tStation'));
+    const bikeCard = element(by.text('Gent-Dampoort-Station'));
     const noBikesText = element(by.text('No bikes available'));
 
     await waitFor(bikeCard)

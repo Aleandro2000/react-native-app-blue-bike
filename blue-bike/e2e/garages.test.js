@@ -8,6 +8,8 @@ describe('GaragesScreen', () => {
   });
 
   it('should show a spinner while loading and then render garages or "No garages available"', async () => {
+    await new Promise(resolve => setTimeout(resolve, 3000));
+    
     await element(by.text('Garages')).tap();
 
     await expect(element(by.type('Spinner'))).toBeVisible();
